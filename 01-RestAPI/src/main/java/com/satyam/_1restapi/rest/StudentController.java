@@ -17,6 +17,6 @@ public class StudentController {
     public String addstudent(@RequestBody Student data) {
 
         System.out.println(data);
-        return "Data Saved Yepp";
+        return "Data Saved Yep";
     }
 }
