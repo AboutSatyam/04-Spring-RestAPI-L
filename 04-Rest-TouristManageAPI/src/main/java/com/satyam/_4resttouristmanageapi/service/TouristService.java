@@ -38,6 +38,6 @@ public class TouristService implements ITouristService {
 
     @Override
     public List<Tourist> fetchAllTouristinfo() {
-        return List.of();
+        return repo.findAll();
     }
 }
