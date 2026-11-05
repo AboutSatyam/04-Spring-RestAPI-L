@@ -14,4 +14,8 @@ public interface ITouristService {
 
     String updateTheTouristInfo(Tourist tourist);
 
+    String updateTheTouristBudget(Integer id, Double budget);
+
+    String deleteTheTouristInfoById(Integer id);
+
 }

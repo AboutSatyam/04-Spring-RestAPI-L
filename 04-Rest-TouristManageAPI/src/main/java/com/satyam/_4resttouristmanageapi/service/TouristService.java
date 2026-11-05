@@ -48,12 +48,39 @@ public class TouristService implements ITouristService {
         Optional<Tourist> optional = repo.findById(tourist.getId());
 
         if (optional.isPresent()) {
-            Tourist trst = optional.get();
+//            Tourist trst = optional.get();
             repo.save(tourist);
             return "Tourist Info Is Updated Successfully";
 
         } else {
             throw new TouristNotFoundException("Tourist With Given Id Is Not Found ");
         }
+    }
+
+    @Override
+    public String updateTheTouristBudget(Integer id, Double budget) {
+        Optional<Tourist> optional = repo.findById(id);
+
+        if (optional.isPresent()) {
+
+            Tourist tourist = optional.get();
+            tourist.setBudget(budget);
+            repo.save(tourist);
+            return "Tourist Budget Is Updated Successfully";
+
+        }
+        return "No Tourist With Given Id";
+    }
+
+    @Override
+    public String deleteTheTouristInfoById(Integer id) {
+        Optional<Tourist> optional = repo.findById(id);
+        if (optional.isPresent()) {
+            repo.deleteById(id);
+            return "Tourist Record Is Delete Sucess With Id " + id;
+        } else {
+
+        }
+        return "";
     }
 }

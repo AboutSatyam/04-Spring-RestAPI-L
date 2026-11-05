@@ -41,6 +41,28 @@ public class TouristRestApi {
             return new ResponseEntity<String>("Some Problem In Fetch", HttpStatus.INTERNAL_SERVER_ERROR);
 
         }
+    }
+
+    @PutMapping("/updatetourist")
+    public ResponseEntity<String> updateTheTourist(@RequestBody Tourist tourist) {
+        try {
+            String status = service.updateTheTouristInfo(tourist);
+            return new ResponseEntity<String>(status, HttpStatus.OK);
+        } catch (Exception e) {
+            return new ResponseEntity<String>(e.getMessage(), HttpStatus.BAD_REQUEST);
+
+        }
+    }
+
+    @PatchMapping("/updatetouristbudget/{id}/{budget}")
+    public ResponseEntity<String> updateTheTouristBudget(@PathVariable("id") Integer id, @PathVariable("budget") Double budget) {
+        try {
+            String status = service.updateTheTouristBudget(id, budget);
+            return new ResponseEntity<String>(status, HttpStatus.OK);
+        } catch (Exception e) {
+            return new ResponseEntity<String>(e.getMessage(), HttpStatus.BAD_REQUEST);
+
+        }
 
     }
 }
