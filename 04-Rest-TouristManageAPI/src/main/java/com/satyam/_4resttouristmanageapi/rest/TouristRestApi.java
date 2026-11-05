@@ -63,6 +63,16 @@ public class TouristRestApi {
             return new ResponseEntity<String>(e.getMessage(), HttpStatus.BAD_REQUEST);
 
         }
+    }
 
+    @DeleteMapping("/deletetourist/{id}")
+    public ResponseEntity<String> deleteTheTourist(@PathVariable("id") Integer id) {
+        try {
+            String status = service.deleteTheTouristInfoById(id);
+            return new ResponseEntity<String>(status, HttpStatus.OK);
+        } catch (Exception e) {
+            return new ResponseEntity<String>(e.getMessage(), HttpStatus.BAD_REQUEST);
+
+        }
     }
 }

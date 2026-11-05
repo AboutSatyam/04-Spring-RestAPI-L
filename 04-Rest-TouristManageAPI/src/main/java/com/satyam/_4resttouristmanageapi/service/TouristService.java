@@ -79,8 +79,7 @@ public class TouristService implements ITouristService {
             repo.deleteById(id);
             return "Tourist Record Is Delete Sucess With Id " + id;
         } else {
-
+            throw new TouristNotFoundException("Tourist With Given Id Is Not Found For Deletion");
         }
-        return "";
     }
 }
