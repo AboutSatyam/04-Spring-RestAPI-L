@@ -12,4 +12,6 @@ public interface ITouristService {
 
     List<Tourist> fetchAllTouristinfo();
 
+    String updateTheTouristInfo(Tourist tourist);
+
 }

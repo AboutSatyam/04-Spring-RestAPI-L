@@ -1,6 +1,6 @@
 package com.satyam._4resttouristmanageapi.exception;
 
-public class TouristNotFoundException extends Throwable {
+public class TouristNotFoundException extends RuntimeException {
     public TouristNotFoundException(String msg) {
         super(msg);
     }

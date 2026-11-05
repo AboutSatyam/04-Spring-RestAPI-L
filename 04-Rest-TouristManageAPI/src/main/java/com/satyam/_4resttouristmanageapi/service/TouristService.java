@@ -7,6 +7,7 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
 import java.util.List;
+import java.util.Optional;
 
 @Service
 public class TouristService implements ITouristService {
@@ -39,5 +40,20 @@ public class TouristService implements ITouristService {
     @Override
     public List<Tourist> fetchAllTouristinfo() {
         return repo.findAll();
+    }
+
+    @Override
+    public String updateTheTouristInfo(Tourist tourist) {
+
+        Optional<Tourist> optional = repo.findById(tourist.getId());
+
+        if (optional.isPresent()) {
+            Tourist trst = optional.get();
+            repo.save(tourist);
+            return "Tourist Info Is Updated Successfully";
+
+        } else {
+            throw new TouristNotFoundException("Tourist With Given Id Is Not Found ");
+        }
     }
 }
