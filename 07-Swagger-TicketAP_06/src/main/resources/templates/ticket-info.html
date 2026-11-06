@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
+<head>
+    <meta charset="UTF-8">
+    <title>Ticket Information</title>
+    <link rel="stylesheet" th:href="@{/css/style.css}">
+</head>
+<body>
+
+<div class="container">
+
+    <h2>Ticket Information</h2>
+
+    <div th:if="${ticket != null}">
+
+        <p><strong>Ticket Number:</strong>
+            <span th:text="${ticket.ticketNumber}"></span>
+        </p>
+
+        <p><strong>Passenger Name:</strong>
+            <span th:text="${ticket.name}"></span>
+        </p>
+
+        <p><strong>Departure:</strong>
+            <span th:text="${ticket.departure}"></span>
+        </p>
+
+        <p><strong>Arrival:</strong>
+            <span th:text="${ticket.arrival}"></span>
+        </p>
+
+        <p><strong>Date Of Journey:</strong>
+            <span th:text="${ticket.dateOfJourney}"></span>
+        </p>
+
+        <p><strong>Ticket Status:</strong>
+            <span th:text="${ticket.status}"></span>
+        </p>
+
+        <p><strong>Ticket Price:</strong>
+            <span th:text="${ticket.ticketPrice}"></span>
+        </p>
+
+    </div>
+
+    <div th:if="${ticket == null}">
+        <p>Ticket not found!</p>
+    </div>
+
+    <a th:href="@{/passenger-form}">Book Another Ticket</a>
+
+</div>
+
+</body>
+</html>

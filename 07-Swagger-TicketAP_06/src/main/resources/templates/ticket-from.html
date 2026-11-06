@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <title>Ticket Booking Successful</title>
+
+    <link rel="stylesheet" th:href="@{/css/style.css}">
+</head>
+
+<body>
+
+<div class="container">
+
+    <h2>Ticket Booking Successful!</h2>
+
+    <p class="success-message">
+        Your ticket has been booked successfully.
+    </p>
+
+    <h3>Your Ticket Number</h3>
+
+    <h2 th:text="${ticketNumber}">Ticket Number</h2>
+
+    <hr>
+
+    <h3>Get Ticket Information</h3>
+
+    <form th:action="@{/get-from}" method="get">
+
+        <label for="ticketNumber">Enter Ticket Number</label>
+
+        <input type="number"
+               id="ticketNumber"
+               name="ticketNumber"
+               placeholder="Enter your ticket number"
+               required>
+
+        <button type="submit">
+            Get Ticket Details
+        </button>
+
+    </form>
+
+    <br>
+
+    <a th:href="@{/passenger-form}">
+        Book Another Ticket
+    </a>
+
+</div>
+
+</body>
+</html>
