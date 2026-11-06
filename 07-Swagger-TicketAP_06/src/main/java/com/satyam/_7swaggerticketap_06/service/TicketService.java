@@ -35,9 +35,8 @@ public class TicketService implements ITicketService {
         ResponseEntity<Ticket> response = restTemplate.getForEntity(get_url, Ticket.class, ticketNumber);//
         Ticket ticket = response.getBody();
         return ticket;
-
         // WebClient Method
-        WebClient.create().get().uri( , ).bodyValue().retrieve().bodyToMono().block()
+     //   WebClient.create().get().uri( , ).bodyValue().retrieve().bodyToMono().block()
 
     }
 }
