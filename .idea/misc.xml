@@ -6,6 +6,7 @@
     <option name="originalFiles">
       <list>
         <option value="$PROJECT_DIR$/01-RestAPI/pom.xml" />
+        <option value="$PROJECT_DIR$/08-Spring-Hateoas/pom.xml" />
       </list>
     </option>
   </component>
